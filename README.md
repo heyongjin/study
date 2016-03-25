@@ -49,3 +49,46 @@ Job Server对所有的轮询任务进行管理，把需要轮询的任务从每�
 
   [1]: http://10.45.7.141:9050/svn/Development_Dept/%E5%BC%80%E5%8F%91%E4%B8%80%E9%83%A8%E9%83%A8%E9%97%A8%E6%96%87%E6%A1%A3/%E6%8A%80%E6%9C%AF%E8%B5%84%E6%96%99/Development/%E5%89%8D%E5%8F%B0%E6%A1%86%E6%9E%B6/07%20%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%A1%86%E6%9E%B6/Job%
   [2]: http://10.45.4.178:8081/nexus/doc/maven-zsmartdependency-plugin/commanduse.html
+
+
+
+卷 代码 的文件夹 PATH 列表
+卷序列号为 0000008D 0005:57B5
+E:.
+├─01 FTF
+│  ├─create_script
+│  └─create_script_Mysql
+├─02 FBF
+│  ├─create_script_R8.0_MySQL（非分布式）
+│  ├─create_script_R8.0（非分布式）
+│  └─create_script_R8.1（分布式）
+│      ├─01 Master
+│      └─02 Slave
+├─ZSmart_FBF_R1.1
+├─ZSmart_FBF_R8.0
+├─ZSmart_FF_R1.0
+├─ZSmart_FTF_R1.1
+├─ZSmart_FTF_R8.0
+│  └─mysql
+└─ZSmart_SSO_V1.0
+
+
+    卷 代码 的文件夹 PATH 列表
+    卷序列号为 0000008D 0005:57B5
+    E:.
+    ├─01 FTF
+    │  ├─create_script
+    │  └─create_script_Mysql
+    ├─02 FBF
+    │  ├─create_script_R8.0_MySQL（非分布式）
+    │  ├─create_script_R8.0（非分布式）
+    │  └─create_script_R8.1（分布式）
+    │  ├─01 Master
+    │  └─02 Slave
+    ├─ZSmart_FBF_R1.1
+    ├─ZSmart_FBF_R8.0
+    ├─ZSmart_FF_R1.0
+    ├─ZSmart_FTF_R1.1
+    ├─ZSmart_FTF_R8.0
+    │  └─mysql
+    └─ZSmart_SSO_V1.0
