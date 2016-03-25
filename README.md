@@ -1,106 +1,51 @@
-# study
-学习相关
-卷 代码 的文件夹 PATH 列表
-卷序列号为 0000000F 0005:57B5
-E:.
-│  tree.txt
-│  
-├─01 FTF
-│  │  create_script - 全改同义词前备份.rar
-│  │  create_script - 融合 201602291751.rar
-│  │  create_script - 融合 beta.rar
-│  │  create_script - 融合 last.rar
-│  │  create_script - 融合 v1 .rar
-│  │  create_script - 融合 交付.rar
-│  │  create_script - 融合 视图，准备改物化视图前.rar
-│  │  ftf_create_script - 融合 0226.rar
-│  │  ftf_create_script.rar
-│  │  ftf_create_script_Mysql_20160325.rar
-│  │  
-│  ├─create_script
-│  │      01.cc_create_user.sql.sql
-│  │      02.脚本兼容多数据库oracle函数.sql
-│  │      03.create_ftf_v8.0.sql
-│  │      04.framework_config_param.sql
-│  │      05.initial_data_itcenter_management.sql
-│  │      06.cc_grant_user.sql
-│  │      07.create_db_link.sql
-│  │      08.create view.sql
-│  │      09.fbf create synonym.sql
-│  │      10.function.sql
-│  │      CREATE SYNONYM.jpeg
-│  │      CREATE SYNONYM.mmap
-│  │      CREATE TABLE.jpeg
-│  │      CREATE TABLE.mmap
-│  │      CREATE VIEW.jpeg
-│  │      CREATE VIEW.mmap
-│  │      create_script（全改成同义词）.rar
-│  │      CRM8.1和OCS8.1融合FTF建库预安装方案.pdf
-│  │      read me.txt
-│  │      
-│  └─create_script_Mysql
-│          01.cc_create_user.sql
-│          02.mysql function.sql
-│          03.create_ftf_R8.0.sql
-│          04.initial_tfm_sequences.sql
-│          05.framework_config_param.sql
-│          06.initial_data_itcenter_management.sql
-│          V8前台FTF支持MySql总结.docx
-│          
-├─02 FBF
-│  │  create_script_R8.0（非分布式）.rar
-│  │  
-│  ├─create_script_R8.0_MySQL（非分布式）
-│  │      bfm_portal_biz_param.sql
-│  │      
-│  ├─create_script_R8.0（非分布式）
-│  │      01.create_fbf_v8.0.sql
-│  │      02.create_fbf_v8.0_thirdparty.sql
-│  │      03.framework_attr.sql
-│  │      04.initial_data_portal_menu.sql
-│  │      read me.txt
-│  │      
-│  └─create_script_R8.1（分布式）
-│      ├─01 Master
-│      │      01.create_fbf_v8.1_master.sql
-│      │      02.create_fbf_v8.1_thirdparty_master.sql
-│      │      03.framework_attr.sql
-│      │      04.initial_data_portal_menu.sql
-│      │      read me.txt
-│      │      
-│      └─02 Slave
-│              01.create_fbf_v8.1_slave.sql
-│              read me.txt
-│              
-├─ZSmart_FBF_R1.1
-│      bussinessframework.pdm
-│      
-├─ZSmart_FBF_R8.0
-│      FBF_R8.0.pdb
-│      FBF_R8.0.pdm
-│      
-├─ZSmart_FF_R1.0
-│      framework.pdb
-│      framework.pdm
-│      
-├─ZSmart_FTF_R1.1
-│      framework.pdm
-│      
-├─ZSmart_FTF_R8.0
-│  │  FTF_R8.0.pdb
-│  │  FTF_R8.0.pdm
-│  │  ftf_R8_jobserver_tables_oracle.sql
-│  │  ftf_R8_jobserver_tables_sybase.sql
-│  │  QMDB_FTF_V8.0.SQL
-│  │  为兼容SybaseIQ，维护PDM主意事项.txt
-│  │  脚本兼容多数据库oracle函数.sql
-│  │  
-│  └─mysql
-│          FTF_R8.0_For_Mysql.pdb
-│          FTF_R8.0_For_Mysql.pdm
-│          
-└─ZSmart_SSO_V1.0
-        create_sso.sql
-        SSO1.1.pdm
-        SSO10.pdm
-        
+# JobServer
+
+Job Server对所有的轮询任务进行管理，把需要轮询的任务从每个分散的节点集合到一个完整的容器里去。独立运行，不影响到主应用，功能完整的日程任务调度系统,基于开源的Quartz Job Scheduling Framework开发
+
+## 介绍说明
+
+目录大概：
+
+    jobserver
+    └── config  配置文件目录
+	└──shell 启停JobServer的脚本
+	│    │    └── jobserver.bat
+	│    │    └──jobserver.sh
+    └── jobserver 工程目录
+	│    └──src
+	│    │    └── main
+	│    │    │    └──java
+	│    │    │    └──resources
+	│    │    └── test
+	│    └──pom.xml
+    └── scripts  数据库脚本
+	│    └──ftf_v8_jobserver_tables_oracle.sql
+	│    └──ftf_v8_jobserver_tables_sybase.sql
+    └── README.MD
+
+## jar包依赖
+
+环境准备
+
+- 需要maven工程，配置本地maven环境
+
+		<dependency>
+            <groupId>com.ztesoft.zsmart.job</groupId>
+            <artifactId>jobserver</artifactId>
+            <version>8.1.0-SNAPSHOT</version>
+        </dependency>
+
+## 原文件下载：
+
+    git clone http://gitlab.ztesoft.com/jobserver/jobserver.git
+
+	
+## 使用详解
+关于部署需要的jar包以及启动脚本需要的jobserver.properties请参考 [maven插件使用][2]
+
+
+关于JobServer的资料，请参考[前台框架SVN上的资料][1]
+
+
+  [1]: http://10.45.7.141:9050/svn/Development_Dept/%E5%BC%80%E5%8F%91%E4%B8%80%E9%83%A8%E9%83%A8%E9%97%A8%E6%96%87%E6%A1%A3/%E6%8A%80%E6%9C%AF%E8%B5%84%E6%96%99/Development/%E5%89%8D%E5%8F%B0%E6%A1%86%E6%9E%B6/07%20%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%A1%86%E6%9E%B6/Job%
+  [2]: http://10.45.4.178:8081/nexus/doc/maven-zsmartdependency-plugin/commanduse.html
